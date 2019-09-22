@@ -1,0 +1,118 @@
+/*------------------------------------*\
+    #FOOTER
+\*------------------------------------*/
+
+/**
+ * Footer
+ */
+.c-footer {
+	clear: both;
+	overflow: hidden;
+	background: $color-brand-primary;
+	color: $color-white;
+	line-height: 1.2;
+
+	&__inner {
+		@media all and (min-width: $bp-med-2) {
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: 255px 1fr 255px;
+			grid-template-columns: 255px 1fr 255px;
+			-ms-grid-rows: 24px 24px 14px 38px;
+			grid-template-rows: 24px 24px 14px 38px;
+			grid-template-areas: "logo a social" 
+													 "logo a address" 
+													 "logo a address";
+		}
+	}
+	&__inner#{&}__inner {
+		padding-bottom: 42px;
+		padding-top: 30px;
+		@media all and (min-width: $bp-med-2) {
+			padding-bottom: 50px;
+			padding-top: 70px;
+		}
+	}
+}
+
+
+/**
+ * Footer nav
+ */
+.c-footer__info {
+	max-width: 40em;
+	
+	a {
+		color: $color-white;
+		text-decoration: underline;
+		
+		&:hover, &:focus {
+			text-decoration: none;
+		}
+	}
+}
+.social-nav {
+	-ms-grid-row: 1;
+		-ms-grid-column: 3;
+	grid-area: social;
+}
+.social-nav__list {
+	text-align: center;
+	margin-bottom: 30px;
+	@media all and (min-width: $bp-med-2) {
+		text-align: right;
+	}
+}
+.social-nav__list li {
+	display: inline-block;
+}
+.social-icon {
+	width: 20px;
+	height: 20px;
+	display: block;
+	svg {
+		height: 100%;
+		max-width: 100%;
+		fill: #fff;
+	}
+	&:hover svg {
+		fill: $color-brand-secondary;
+	}
+}
+.c-footer__address {
+	text-align: center;
+		font-size: 0.875rem;
+		font-weight: 100;
+		line-height: 1.75;
+		letter-spacing: 1px;
+		-ms-grid-row: 2;
+		-ms-grid-column: 3;
+		-ms-grid-row-span:2;
+		grid-area: address;
+		@media all and (min-width: $bp-med-2) {
+			text-align: right;
+		}
+	.ste {
+		display: block;
+		@media all and (min-width: $bp-med-2) {
+			display: inline;
+		}
+	}
+}
+
+.c-utility-nav {
+	
+	text-transform: uppercase;
+	@include fluid-type(font-size,37.5rem, 80rem, 0.5rem, 0.75rem);
+	a {
+		color: $color-white;
+	}
+}
+.utility-container {
+	text-align: center;
+	background-color: $color-brand-primary-alt;
+	padding: 38px 0;
+}
+.copyright {
+	@include fluid-type(font-size,37.5rem, 80rem, 0.5rem, 0.625rem);
+}

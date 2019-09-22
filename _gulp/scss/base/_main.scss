@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    #MAIN
+\*------------------------------------*/
+
+/**
+ * Main content area
+ */
+[role=main] {
+    flex: 1;
+    margin-top: 82px;
+	@media all and (min-width: $bp-large-2) {
+		margin-top: 149px;
+	}
+}
+// Target IE11
+.ie-11 {
+    padding-top: 82px;
+	@media all and (min-width: $bp-large-2) {
+		padding-top: 149px;
+	}
+}

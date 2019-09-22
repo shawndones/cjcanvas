@@ -1,0 +1,86 @@
+/*------------------------------------*\
+    #MEDIA ELEMENTS
+\*------------------------------------*/
+
+/**
+ * Make media elements responsive
+ */
+ img, video, object {
+	max-width: 100%;
+	height: auto;
+}
+
+/**
+ * Iframe base styles
+ */
+iframe {
+	margin-bottom: $space;
+}
+
+/**
+ * Figure base styles
+ */
+figure {
+	margin-bottom: $space;
+
+	/**
+	 * Figure image base styles
+	 */
+	img {
+		margin-bottom: $space-half;
+	}
+}
+
+/**
+ * Figure caption base styles
+ */
+figcaption {
+	font-style: italic;
+}
+// Image modifier
+img[class*="_round"] {
+  border-radius: 50%;
+}
+.is-type-video {
+    position: relative;
+    &:before {
+        content: 'Loading...';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        color: $color-white;
+        background-color: $color-gray-35;
+    }
+}
+
+.wp-block-embed.is-type-video, .cj-video {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+}
+
+.wp-embed-aspect-16-9, .cj-video-16-9 {
+    padding-bottom: 56.25%;
+}
+
+.wp-embed-aspect-4x3 {
+    padding-bottom: 75%;
+}
+
+.wp-block-embed.is-type-video iframe, .cj-video iframe {
+    position: absolute;
+    top:0;
+      left: 0;
+      height: 100%;
+    max-width: 100%;
+    width: 100%;
+}
+
+
+.map-container {
+    height: 400px;
+}

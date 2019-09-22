@@ -1,0 +1,276 @@
+/*------------------------------------*\
+    #CAROUSEL
+\*------------------------------------*/
+.slick-prev,
+.slick-next {
+    position: absolute;
+    display: block;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding: 0;
+    border: none;
+    outline: none;
+    z-index: 1;
+    &:hover, &:focus {
+        outline: none;
+    }
+    &.icon-chevron {
+        display: block;
+        width: 14px;
+        height: 24px;
+        svg {
+            fill: $color-white;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    &:before {
+        font-size: 20px;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+.slick-slide {
+    &:focus {
+        outline: none;
+    }
+}
+.slick-prev {
+    left: $pad-double;
+}
+
+.slick-next {
+    right: $pad-double;
+    transform-origin: 50% 50%;
+    transform: rotate(180deg);
+}
+
+.c-hero-slider {
+	color: $color-white;
+	h1 {
+		color: $color-white;
+		text-transform: uppercase;
+		@include fluid-type(font-size,24rem, 99rem, 1rem, 1.313rem);
+	}
+	&__slide#{&}__slide {
+        height: 400px;
+        // display: -ms-grid;
+		display: grid;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		@media all and (min-width: $bp-med) {
+			height: 700px;
+		}		
+    }
+    .ie-11 & {
+        position: relative;
+    }
+	&__inner#{&}__inner {
+		margin: auto;
+        width: 100%;
+        position: relative;
+        .ie-11 & {
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+	}
+	&__title {
+		@include fluid-type(font-size,24rem, 99rem, 1.875rem, 3.125rem);
+		color: $color-white;
+		span {
+			font-weight: bold;
+			display: block;
+		}
+	}
+	&__content {
+		max-width: 500px;
+		@include fluid-type(font-size,24rem, 99rem, 1.125rem, 1.375rem);
+    }
+    &-container {
+        position: relative;
+        overflow: hidden;
+        .c-slick-nav {
+            position: absolute;
+            bottom: 5%;
+            left: $pad-double;
+            width: 100%;
+            @media all and (min-width: $bp-med) {
+                bottom: 20%; 
+            }
+        }
+        .slick-dots {
+                list-style-type: none;
+                margin: 0 auto;
+                padding: 0;
+                max-width: $l-max-width;
+            li {
+                display: inline-block;
+                margin: 0 3px;
+            }
+            button {
+                text-indent: -9999px;
+                background: $color-white;
+                border-radius: 50%;
+                border: none;
+                height: 12px;
+                width: 12px;
+                padding: 0;
+                margin: 0;
+                &:focus {
+                    outline: none;
+                }
+            }
+            .slick-active {
+                button {
+                    background-color: $color-brand-secondary;
+                 
+                }
+            }
+        }
+    }
+}
+.c-testimonials-slider {
+	max-width: $l-max-width;
+    margin: 0 auto;
+    // min-height: 200px;
+	.slick-slide {
+        padding-bottom: 90px;
+        display: block;
+        text-align: center;
+        @media all and (min-width: $bp-med) {
+            padding: $pad-double;
+        }
+		p {
+            max-width: 90%;
+            margin: 0 auto;
+            @media all and (min-width: $bp-med) {
+                max-width: 77%;
+            }
+        }
+        cite {
+           margin-top: $space-double;
+        }
+    }
+    .slick-prev,
+        .slick-next {
+            top: auto;
+            bottom: $space-double;
+
+            &.icon-arrow {
+                display: block;
+                width: 21px;
+                height: 36px;
+                svg {
+                    fill: $color-white;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            @media all and (min-width: $bp-med) {
+                bottom: 50%;
+            }
+        }
+        .slick-next {
+            right: 5em;
+            @media all and (min-width: $bp-med) {
+                right: $space-double;
+            }
+        }
+        .slick-prev {
+            left: 5em;
+            -webkit-transform: translate(0);
+            -ms-transform: translate(0);
+            transform: translate(0);
+            @media all and (min-width: $bp-med) {
+                left: $space-double;
+            }
+        }
+   
+}
+.c-sidebar-testimonials {
+    .slick-prev,
+    .slick-next {
+        top: auto;
+        bottom: 0;
+        &.icon-arrow {
+            display: block;
+            width: 14px;
+            height: 24px;
+            svg {
+                fill: $color-white;
+                width: 100%;
+                height: 100%;
+                fill: $color-brand-tertiary;
+            }
+        }
+    }
+    .slick-prev {
+        left: 40%;
+        -webkit-transform: translate(0);
+        -ms-transform: translate(0);
+        transform: translate(0);
+    }
+    
+    .slick-next {
+        right: 40%;
+    }
+}
+.c-verdicts-slider {
+    &__body {
+        transform: scale(.45);
+        transform-origin: center center;
+        transition: ease-in-out transform .2s;
+        &.slick-active {
+            transform: scale(1);
+            @media all and (min-width: $bp-med) {
+                transform: scale(.45);
+            }
+        }
+        &.slick-center {
+            transform: scale(1);
+        }
+    }
+    
+	h3 {
+        font-weight: bold;
+		@include fluid-type(font-size,37.5rem, 80rem, 2.5rem, 3.125rem);
+		color: $color-brand-primary;
+	}
+	
+    .slick-prev,
+    .slick-next {
+        top: auto;
+        bottom: -$space-double;
+        @media all and (min-width: $bp-med) {
+            bottom: 50%;
+        }
+        &.icon-chevron {
+            svg {
+                fill: $color-brand-primary;
+            }
+        }
+    }
+    .slick-next {
+        right: 9em;
+        @media all and (min-width: $bp-med) {
+            right: $space-double;
+        }
+    }
+    .slick-prev {
+        left: 9em;
+        -webkit-transform: translate(0);
+        -ms-transform: translate(0);
+        transform: translate(0);
+        @media all and (min-width: $bp-med) {
+            left: $space-double;
+        }
+    }
+}

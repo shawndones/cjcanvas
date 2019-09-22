@@ -1,0 +1,98 @@
+/*------------------------------------*\
+    #PAGE HEADER
+\*------------------------------------*/
+/**
+ * 1) The page header contains the page's heading, as perhaps other page information
+ *    such as description or actions (edit, delete, etc).
+ */
+
+.c-page-header {
+	padding: 0;
+	position: relative;
+	background-color: $color-brand-tertiary;
+	margin-bottom: $space-double;
+	&__title {
+		@include fluid-type(font-size,37.5rem, 80rem, 1.25rem, 1.75rem);
+		text-transform: uppercase;
+		color: $color-white;
+		font-weight: 500;
+		line-height: 45px;
+		margin-bottom: 0;
+		@media all and (min-width: $bp-large) {
+			line-height: 72px;
+		}
+		a, a:hover, a:active, a:visited {
+			color: $color-white;
+		}
+	}
+	.icon-chevron {
+		width: 12px;
+		height: 24px;
+		margin-right: 8px;
+		position: relative;
+		top: 3px;
+		svg {
+			width: 12px;
+			height: 24px;
+			fill: $color-brand-secondary;
+		}
+	}
+	&--blog {
+		.c-page-header__inner {
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns:1fr 1fr;
+			-ms-grid-rows: 1fr;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr;
+			grid-template-areas: "a b"
+														"nav nav";
+
+			@media all and (min-width: $bp-med) {
+				grid-template-rows: 72px 1fr;
+			} 
+		}
+		 .c-page-header__title {
+			 -ms-grid-column: 1;
+			 -ms-grid-row: 1;
+			grid-area: a;
+			
+		}
+		.c-categories-toggle {
+			-ms-grid-column: 2;
+			 -ms-grid-row: 1;
+			grid-area: b;
+			align-items: flex-end;
+			text-align: right;
+			font-size: 0.938rem;
+			font-weight: bold;
+			.icon-chevron {
+				width: 20px;
+				height: 20px;
+				transform: rotate(-90deg);
+				transform-origin: 50% 50%;
+				line-height: 20px;
+				top: 8px;
+				svg {
+		
+					width: 6px;
+					height: 12px;
+					
+				}
+			}
+			&:visited {
+				color: $color-white;
+			}
+			&:hover {
+				color: $color-brand-secondary;
+			}
+
+		}
+	}
+}
+
+.page-cases-we-handle {
+	.c-page-header {
+		margin-bottom: $space-double;
+	}
+}

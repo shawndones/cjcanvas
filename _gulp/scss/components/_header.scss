@@ -1,0 +1,262 @@
+/*------------------------------------*\
+    #HEADER
+\*------------------------------------*/
+
+/**
+ * Header
+ */
+.c-header {
+	box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.2);
+	// padding: 0.5em 0;
+	background-color: $color-brand-primary;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 82px;
+	z-index: 9999;
+	@media all and (min-width: $bp-large-2) {
+		padding: 0;
+		height: 149px;
+	}
+	.c-search-form {
+		height: 40px;
+		overflow: hidden;
+		position: relative;
+		-webkit-transition: ease-in-out width .3s;
+						transition: ease-in-out width .3s;
+		width: 40px;
+		-ms-grid-row: 1;
+		-ms-grid-column: 2;
+		-ms-grid-column-span:2;
+		grid-area: search;
+		margin-left: auto;
+		display: none;
+		@media all and (min-width: $bp-large-2) {
+			display: block;
+		}
+		label {
+			padding-bottom: 0;
+		}
+		&:active {
+			outline: none;
+		}
+		&__input {
+			margin: 0;
+			height: 40px;
+			outline: none;
+			-webkit-transition: ease-in-out all .3s;
+							transition: ease-in-out all .3s;
+			width: 340px;
+			line-height: 40px;
+			&:hover, &:active {
+				outline: none;
+			}
+		}
+		&__btn {
+			background-image: url(icons/search.svg);
+			background-size: 22px 22px;
+			background-position: 50% 50%;
+			background-color: $color-brand-primary-alt;
+			background-repeat: no-repeat;
+			height: 40px;
+			width: 40px;
+			min-width: 0;
+			padding: 0;
+			margin: 0;
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 1;
+			border: none;
+			background-color: $color-brand-secondary;
+			height: 40px;
+			width: 40px;
+			svg {
+				fill: $color-brand-primary;
+				height: 22px;
+				width: 22px;
+			}
+			&:hover, &:active {
+				outline: none;
+			}
+		}
+		&.search-hover, &.search-active {
+			width: 350px;
+		}
+	}
+	
+}
+.logged-in .c-header {
+	top: 46px;
+	@media all and (min-width: 782px) {
+		top: 32px;
+	}
+}
+/**
+ * Header Controls
+ * 1) This container holds the primary nav and search menu
+ */
+.c-header__controls {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	padding-right: 1rem;
+}
+
+/**
+ * Nav toggle button
+ * 1) Styles for the general nav toggle button
+ */
+.nav-toggle {
+	display: block;
+	padding: 0;
+	font-size: 1.3rem;
+	line-height: 1;
+	-ms-grid-row: 3;
+		-ms-grid-column: 1;
+	grid-area: nav;
+	
+	@media all and (min-width: $bp-large-2) {
+		display: none;
+	}
+
+	@media all and (max-width: 17em) {
+		padding-left: 0.2rem;
+		padding-right: 0.2rem;
+	}
+	.icon-menu {
+		display: block;
+		height: 2px;
+		width: 18px;
+		border-radius: 2px;
+		background-color: $color-white;
+		top: 50%;
+		transform: translateY(-50%);
+		position: relative;
+		&:before, &:after {
+			content: '';
+			display: block;
+			height: 2px;
+			width: 18px;
+			border-radius: 2px;
+			background-color: $color-white;
+			position: absolute;
+			transition: ease-in-out .2s;
+		}
+		&:before {
+			top: -5px;
+		}
+		&:after {
+			top: 5px;
+		}
+	
+	}
+	&.active .icon-menu {
+		background-color: transparent;
+		width: 18px;
+		&:before {
+			width: 18px;
+			background-color: #fff;
+			top: 0;
+			transform: rotate(-45deg);
+		}
+		&:after {
+			width: 18px;
+			background-color: #fff;
+			top: 0;
+			transform: rotate(45deg);
+		}
+	}
+}
+
+/**
+ * Search nav toggle button
+ * 1) Specific nav toggle button for the search form
+ */
+.nav-toggle-search {
+	display: block;
+	
+	@media all and (min-width: $bp-small-2) {
+		display: none;
+	}
+}
+
+
+
+
+// Create a grid for the header items
+.c-header__inner {
+	display: -ms-grid;
+	display: grid;
+
+	// Define columns
+	-ms-grid-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 12fr 1fr;
+	
+	// Define Rows 62px logo height
+	-ms-grid-rows: 10px 17px 28px 17px 10px;
+	grid-template-rows: 10px 17px 28px 17px 10px;
+	// Name the grid areas
+	grid-template-areas: "a   b    c"
+											 "d   logo e"
+											 "nav logo cta"
+											 "i   logo j"
+											 "f   g    h";
+	@media all and (min-width: $bp-large-2) {
+		-ms-grid-columns: 200px 1fr 180px;
+		grid-template-columns: 200px // width of logo
+													1fr // remaining space for navigation 
+													180px; // width of cta
+		-ms-grid-rows: 40px 42px 42px 40px;
+		grid-template-rows: 40px 42px 42px 40px;
+		grid-template-areas: "a    search   search"
+												 "logo b   c"
+												 "logo nav cta"
+												 "d    e   f";
+	}
+}
+
+.c-block-cta {
+	text-align: right;
+	color: $color-white;
+	-ms-grid-row: 3;
+	-ms-grid-column: 3;
+	grid-area: cta;
+	display: grid;
+	margin: auto 0 auto auto;
+
+	a:link, a:visited, a:hover {
+		color: $color-white;
+	}
+	.tel {
+		display: none;
+		// font-size: 1.25rem;
+		font-weight: 700;
+		@media all and (min-width: $bp-large-2) {
+			display: block;
+		}
+	}
+	&__text {
+		font-size: 0.625rem;
+		padding-bottom: 0;
+		margin-bottom: 0;
+		display: none;
+		@media all and (min-width: $bp-large-2) {
+			display: block;
+		}
+	}
+	.icon-phone {
+		width: 22px;
+		height: 22px;
+		display: block;
+		@media all and (min-width: $bp-large-2) {
+			display: none;
+		}
+		svg {
+			fill: $color-brand-secondary;
+			height: 22px;
+			width: 22px;
+		}
+	}
+}
