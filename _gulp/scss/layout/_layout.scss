@@ -9,11 +9,15 @@
 	max-width: $l-max-width;
 	margin: 0 auto;
 	padding: 0;
-	&-frame {
-		max-width: $l-max-width;
-		padding: 0 $pad-double;
-		margin: 0 auto;
+	.alignfull {
+		width: 100vw;
+		position: relative;
+		left: 50%;
+		right: 50%;
+		margin-left: -50vw;
+		margin-right: -50vw;
 	}
+
 }
 
 /*------------------------------------*\

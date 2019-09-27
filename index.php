@@ -37,7 +37,7 @@ if(1 == $paged) { ?>
 		}
 	$term_id = get_cat_ID( $category_name );
 	$term = 'term_' . $term_id;
-	$default_image = get_field('category_image', $term);
+	$default_image =  get_field('category_image', $term);
 
 
 	// thumbnail

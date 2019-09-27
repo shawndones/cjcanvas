@@ -7,7 +7,8 @@
  */
 .c-section {
 	position: relative;
-	margin: 0 0 $space-double;
+	padding: $pad-double;
+	margin: 0;
 	.l-sidebar & {
 		@media all and (min-width: $bp-large) {
 			margin-right: 2em;

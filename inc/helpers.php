@@ -37,14 +37,15 @@ function js_variables(){ ?>
 add_action ( 'wp_head', 'js_variables' );
 
 // Display First Paragraph of Post if not SEO Desc
-function cja_first_paragraph() {
-	$first_paragraph_str = wpautop(get_the_content());
-	$first_paragraph_str = substr($first_paragraph_str, 0, strpos($first_paragraph_str, '</p>') + 4);
-	$first_paragraph_str = strip_tags($first_paragraph_str, '<a><strong><em>');
-	return  $first_paragraph_str ;
-}
+// This entry throws a warning in WP. Find Some other way to do this
+// function cja_first_paragraph() {
+// 	$first_paragraph_str = wpautop(get_the_content());
+// 	$first_paragraph_str = substr($first_paragraph_str, 0, strpos($first_paragraph_str, '</p>') + 4);
+// 	$first_paragraph_str = strip_tags($first_paragraph_str, '<a><strong><em>');
+// 	return  $first_paragraph_str ;
+// }
 
-add_action( 'rest_api_init', 'create_api_posts_meta_field' );
+// add_action( 'rest_api_init', 'create_api_posts_meta_field' );
 
 // function text_area_shortcode($value, $post_id, $field) {
 //   if (is_admin()) {
