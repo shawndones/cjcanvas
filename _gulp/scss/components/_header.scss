@@ -88,6 +88,25 @@
 	
 }
 
+.c-header__logo {
+	max-width: 200px;
+	@media all and (min-width: $bp-large-2) {
+		max-width: 300px;
+	}
+	svg {
+		height: 100%;
+		width: 100%;
+		fill: $color-white;
+	}
+	.cls-1{
+		fill: $color-white;
+	}
+	.cls-2{
+		fill: $color-white;
+	}
+}
+
+
 
 .c-header__logo {
 	-ms-grid-row: 2;
