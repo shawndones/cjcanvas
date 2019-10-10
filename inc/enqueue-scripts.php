@@ -44,10 +44,10 @@ function cj_enqueue_scripts(){
 // }
 // add_filter('script_loader_tag', 'google_recaptcha_load_tag', 10, 2);
 // // Update CSS within in Admin
-// function admin_style() {
-//   wp_enqueue_style('admin-styles', get_template_directory_uri().'/admin.css');
-// }
-// add_action('admin_enqueue_scripts', 'admin_style');
+function admin_style() {
+  wp_enqueue_style('admin-styles', get_template_directory_uri().'/admin.css');
+}
+add_action('admin_enqueue_scripts', 'admin_style');
 
 
 

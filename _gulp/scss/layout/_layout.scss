@@ -5,19 +5,20 @@
 /**
  * Layout container
  */
- .l-frame {
+ .l-frame, .alignwide {
 	max-width: $l-max-width;
 	margin: 0 auto;
   padding: 1rem; 
-	.alignfull {
-		width: 100vw;
-		position: relative;
-		left: 50%;
-		right: 50%;
-		margin-left: -50vw;
-		margin-right: -50vw;
-	}
+	
+}
 
+.alignfull {
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
 }
 
 /*------------------------------------*\

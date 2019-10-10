@@ -21,26 +21,13 @@
  *
  */
 
-/* Examples Only 
- * You should remove these
- */
-//  Crown of Thorns RGB: 113, 34, 45
- $color-brand-crown-of-thorns: #71222D;
- // Persion Plum RGB: 103, 24, 36
- $color-brand-persian-plum: #671824;
-//  Heath RGB: 78, 15, 23
- $color-brand-heath: #4E0F17;
-//  Sea Buckthorn RGB: 245, 151, 35
- $color-brand-sea-buckthorn: #FC8D00;
-//  Shark RGB: 38, 38, 45
- $color-brand-shark: #26262D;
- 
-
+ $color-brand-pizazz: rgb(252, 141, 0);
+ $color-brand-claret: rgb(137, 23, 54);
+ $color-brand-claret-dim: rgba(137, 23, 54, .9);
+ $color-brand-mine-shaft: rgb(33, 30, 30);
+ $color-brand-mine-shaft-dim: rgba(33, 30, 30, .9);
 
  $color-brand-tertiary-dim:  rgba(38, 38, 45, .75);
- 
-
-
 
 
 /*
@@ -138,6 +125,12 @@ $color-text-link-light-visited: $color-white;
  *    for navigation items, block borders, etc.
  */
 $color-border: $color-scarpa-flow;
+ 
+.has-white-color{ color: $color-white; }
+.has-pizazz-color{ color: $color-brand-pizazz; }
+.has-claret-color{ color: $color-brand-claret; }
+.has-mine-shaft-color{ color: $color-brand-mine-shaft; }
+
 
 
 /*------------------------------------*\
