@@ -9,6 +9,7 @@ if( function_exists('acf_add_options_page') ) {
 			);
 	acf_add_options_page($option);
 
+	// EXAMPLES. DO NOT USE
 	// STAFF OPTIONS
 	// $staff_options = array(
 	// 	'page_title' => 'Staff Options',

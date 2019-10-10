@@ -5,10 +5,10 @@
 /**
  * Layout container
  */
- .l {
+ .l-frame {
 	max-width: $l-max-width;
 	margin: 0 auto;
-	padding: 0;
+  padding: 1rem; 
 	.alignfull {
 		width: 100vw;
 		position: relative;
