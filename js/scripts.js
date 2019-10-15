@@ -4,7 +4,11 @@
  * a new file and 'require' it in here. Coffeescript files should have the
  * extension 'js.coffee'.
  */
+var isIE11 = !!(navigator.userAgent.match(/Trident/) && navigator.userAgent.match(/rv[ :]11/));
 
+if (isIE11) {
+  document.body.className += ' ' + 'isIE11';
+}
 // wait for document ready
 jQuery(document).ready(function($) {
 
