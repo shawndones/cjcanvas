@@ -65,7 +65,7 @@ if (is_front_page()) {
 		  <header role="banner" class="c-header">
 			<div class="c-header__inner l-frame">
 				
-					<?php get_template_part( 'template-parts/search-form', 'none' );  ?>
+					<?php // get_template_part( 'template-parts/search-form', 'none' );  ?>
 
 					<!-- Logo -->
 					<!-- <a href="/" class="c-logo-link c-header__logo"><img class="c-logo c-logo-link__img" src="<?php // bloginfo('template_directory');?>/img/logo.png" alt="<?php // bloginfo('name'); ?>" /></a>	 -->
@@ -85,14 +85,11 @@ if (is_front_page()) {
 							// 'walker' => new WPSE_78121_Sublevel_Walker
 							)); ?>
 					</nav>
-
+					
 					<div class="c-block-cta">
 					<!-- Phone Icon -->
 						<p class="c-block-cta__text">Free Consultations 24/7</p>
 						<a class="c-block-cta__phone-link" href="tel:<?php echo do_shortcode('[phone]'); ?>"><span class="tel"><?php echo do_shortcode('[phone]'); ?></span><i class="icon-phone"><?php include(CJ_THEME_DIR . "/icons/phone.svg"); ?></i></a>
 					</div>
-					
-							
 		  </header><!-- .header -->
-
 	<main role="main" class="mod_scale_fluid">

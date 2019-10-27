@@ -5,7 +5,7 @@
 /**
  * Layout container
  */
- .l-frame, .alignwide {
+ .l-frame, .alignwide, .wp-block-cover__inner-container {
 	max-width: $l-max-width;
 	margin: 0 auto;
   padding: 1rem; 
@@ -13,12 +13,12 @@
 }
 
 .alignfull {
-	width: 100vw;
+	width: 100%;
 	position: relative;
 	left: 50%;
 	right: 50%;
-	margin-left: -50vw;
-	margin-right: -50vw;
+	margin-left: -50%;
+	margin-right: -50%;
 }
 
 /*------------------------------------*\
