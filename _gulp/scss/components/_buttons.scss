@@ -7,7 +7,7 @@
  */
 .c-btn {
 	background-size: 100%;
-  background-image: $gradient-brand-secondary;
+  background-image: $color-brand-secondary;
   position: relative;
   z-index: 100;
 	display: inline-block;
@@ -21,19 +21,7 @@
 	transition: all 0.2s ease-in-out;
 	text-transform: uppercase;
 	font-size: 0.75rem;
-	&:before {
-    border-radius: 2px;
-    background-image: $gradient-brand-tertiary;
-    content: '';    
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0; left: 0;
-    opacity: 0;
-    z-index: -100;
-    transition: opacity 0.2s ease-in-out;
-  }
+
 	&:hover, &:focus {
 		color: $color-brand-secondary;
 		background-image: $color-brand-tertiary;

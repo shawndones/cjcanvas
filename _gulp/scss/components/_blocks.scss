@@ -12,33 +12,37 @@
 /*------------------------------------*\
 	#HERO BLOCK
 \*------------------------------------*/
-.c-block-hero {
+.c-hero {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
-    height: 352px;
+    // min-height: 352px;
     color: $color-white;
     text-align: center;
+    padding: 20vh 0;
     @media all and (min-width: $bp-med) {
-        height: 700px;
+        // min-height: 700px;
     }
-    &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        background-color:  $color-brand-tertiary-dim;
-    }	
+    // &:after {
+    //     content: '';
+    //     display: block;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     z-index: 1;
+    //     background-color:  $color-brand-tertiary-dim;
+    // }	
     &__inner#{&}__inner {
         margin: auto;
-        position: relative;
-        z-index: 2;
+        width: 100%;
+        // position: relative;
+        // z-index: 2;
     }
     &__content#{&}__content {
 		max-width: 500px;
@@ -46,20 +50,9 @@
         margin: 0 auto $space-double auto;
 	}
 }
-.page--about-us {
-    .c-block-hero {
-        margin-top: 1px;
-        &__inner#{&}__inner {
-            top: 50%;
-            transform: translate(0, -50%);
-        }
-    }
-}
-/**
- * Hero Headline
- * 1) This sits overtop of the hero image when space permits
- */
-.c-block-hero__headline {
+
+
+.c-hero__headline {
     @include fluid-type(font-size,24rem, 99rem, 1.875rem, 3.125rem);
     color: $color-white;
     span {
