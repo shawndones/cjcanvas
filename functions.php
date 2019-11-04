@@ -2,10 +2,6 @@
 // turn off automatic development updates
 define( 'WP_AUTO_UPDATE_CORE', false );
 
-// Add support for full and wide align images.
-add_theme_support( 'align-wide' );
-
-
 define('CJ_THEME_DIR', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 define('CJ_THEME_VERSION', time());
 
