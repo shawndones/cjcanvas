@@ -38,12 +38,6 @@ add_action ( 'wp_head', 'js_variables' );
 
 
 
-// Add reusable blocks as sidebar link in admin panel
-add_action( 'admin_menu', 'linked_url' );
-function linked_url() {
-add_menu_page( 'linked_url', 'Reusable Blocks', 'read', 'edit.php?post_type=wp_block', '', 'dashicons-editor-table', 22 );
-}
-
 // Display First Paragraph of Post if not SEO Desc
 // This entry throws a warning in WP. Find Some other way to do this
 // function cja_first_paragraph() {
